@@ -27,7 +27,7 @@ namespace GOGOCSHARP
             var parser = new MiniJavaGramParser(tokens);
             var tree = parser.prog();
             var pastwk = new ParseTreeWalker();
-            pastwk.Walk(new MiniJavaGramBaseListener(), tree);
+            pastwk.Walk(new LISTENERMINIJAVA(), tree);
             Console.ReadLine();
         }
     }

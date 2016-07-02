@@ -43,8 +43,7 @@ public partial class MiniJavaGramBaseListener : IMiniJavaGramListener {
 	public virtual void EnterProg([NotNull] MiniJavaGramParser.ProgContext context)
     {
 
-        Console.WriteLine("kek");
-        Console.WriteLine (context.ID().ToString());
+     
 
     }
 	/// <summary>
