@@ -134,7 +134,7 @@ public partial class MiniJavaGramBaseListener : IMiniJavaGramListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void EnterArraydeclaration([NotNull] MiniJavaGramParser.ArraydeclarationContext context)
     {
-        context.doubleArr.
+      
     }
 	/// <summary>
 	/// Exit a parse tree produced by <see cref="MiniJavaGramParser.arraydeclaration"/>.
