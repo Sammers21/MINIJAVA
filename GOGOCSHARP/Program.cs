@@ -29,7 +29,7 @@ namespace GOGOCSHARP
                     var tree = parser.prog();
                     var pastwk = new ParseTreeWalker();
                     pastwk.Walk(new LISTENERMINIJAVA(), tree);
-                    Console.ReadLine();
+                
                 }
                 catch
                 {

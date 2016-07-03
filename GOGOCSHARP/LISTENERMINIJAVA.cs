@@ -1,12 +1,7 @@
-﻿using Antlr4.Runtime;
-using Antlr4.Runtime.Misc;
-using Antlr4.Runtime.Tree;
+﻿using Antlr4.Runtime.Misc;
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GOGOCSHARP
 {
@@ -17,7 +12,7 @@ namespace GOGOCSHARP
         public override void EnterProg([NotNull] MiniJavaGramParser.ProgContext context)
         {
 
-            
+
             res += "class " + context.ID().GetText() + " {\n";
 
         }
@@ -26,8 +21,8 @@ namespace GOGOCSHARP
         {
 
             res += "\n}";
-            Console.WriteLine(res + "\n\n\n");
-            File.WriteAllText("output"+Program.i.ToString()+".cs", res, Encoding.UTF8);
+           // Console.WriteLine(res + "\n\n\n");
+            File.WriteAllText("test" + Program.i.ToString() + ".cs", res, Encoding.UTF8);
 
         }
 
@@ -38,11 +33,13 @@ namespace GOGOCSHARP
             {
                 for (int i = 1; i < context.ID().Length; i++)
                 {
-                    if (i == context.ID().Length - 1)
+                    if (i==context.ID().Length-1)
                     {
                         res += context.ID()[i].GetText();
+                        continue;
                     }
-                    res += context.ID()[i].GetText() + ",";
+                    res += context.ID()[i].GetText()+",";
+
                 }
             }
 
@@ -68,7 +65,7 @@ namespace GOGOCSHARP
 
         public override void ExitExprassion([NotNull] MiniJavaGramParser.ExprassionContext context)
         {
-            if (FORFLAG == true)
+            if (context.children[0].GetText() == "for" && FORFLAG == true)
             {
                 FORFLAG = false;
                 res += "\n}\n";
@@ -150,10 +147,11 @@ namespace GOGOCSHARP
             res += "public static " + context.children[4].GetText() + " " + context.ID().GetText() + "(" + context.args().GetText() + "){\n";
         }
 
-        public override void ExitOperator([NotNull] MiniJavaGramParser.OperatorContext context)
+        public override void ExitOtherMthod([NotNull] MiniJavaGramParser.OtherMthodContext context)
         {
             res += "\n}\n";
         }
+
     }
 
 
