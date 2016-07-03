@@ -24,6 +24,9 @@ exprassion : RETURN PASS+ varible PASS* operator PASS* varible DC
     | arraydeclaration DC
     | FOR PASS+ LBRACKET DOUBLE PASS+ ID DT PASS+ ID RBRACKET OBRACE exprassion* CBRACE
     | COMMETSLASH string* ID*
+    | DOUBLE  PASS+ ID PASS* ASSIGN PASS* doubleVal PASS* DC
+    | (DOUBLE  PASS+)? ID PASS* ASSIGN PASS* ID PASS* MULT PASS*ID PASS* DC
+
 ;
 
 
