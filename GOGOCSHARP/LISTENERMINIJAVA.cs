@@ -24,9 +24,10 @@ namespace GOGOCSHARP
 
         public override void ExitProg([NotNull] MiniJavaGramParser.ProgContext context)
         {
+
             res += "\n}";
             Console.WriteLine(res + "\n\n\n");
-            File.WriteAllText("output.cs", res, Encoding.UTF8);
+            File.WriteAllText("output"+Program.i.ToString()+".cs", res, Encoding.UTF8);
 
         }
 
@@ -120,6 +121,16 @@ namespace GOGOCSHARP
                 return;
             }
             if (context.children[0].GetText().Contains("double"))
+            {
+                for (int i = 0; i < context.children.Count; i++)
+                {
+                    res += context.children[i].GetText();
+
+                }
+                res += "\n";
+                return;
+            }
+            else
             {
                 for (int i = 0; i < context.children.Count; i++)
                 {

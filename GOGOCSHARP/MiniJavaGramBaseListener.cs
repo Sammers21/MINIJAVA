@@ -21,7 +21,6 @@
 
 
 using Antlr4.Runtime.Misc;
-using System;
 using IErrorNode = Antlr4.Runtime.Tree.IErrorNode;
 using ITerminalNode = Antlr4.Runtime.Tree.ITerminalNode;
 using IToken = Antlr4.Runtime.IToken;
@@ -40,20 +39,13 @@ public partial class MiniJavaGramBaseListener : IMiniJavaGramListener {
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterProg([NotNull] MiniJavaGramParser.ProgContext context)
-    {
-
-     
-
-    }
+	public virtual void EnterProg([NotNull] MiniJavaGramParser.ProgContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by <see cref="MiniJavaGramParser.prog"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitProg([NotNull] MiniJavaGramParser.ProgContext context)
-    {
-    }
+	public virtual void ExitProg([NotNull] MiniJavaGramParser.ProgContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="MiniJavaGramParser.classBody"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -131,19 +123,13 @@ public partial class MiniJavaGramBaseListener : IMiniJavaGramListener {
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterArraydeclaration([NotNull] MiniJavaGramParser.ArraydeclarationContext context)
-    {
-      
-    }
+	public virtual void EnterArraydeclaration([NotNull] MiniJavaGramParser.ArraydeclarationContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by <see cref="MiniJavaGramParser.arraydeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitArraydeclaration([NotNull] MiniJavaGramParser.ArraydeclarationContext context)
-    {
-
-    }
+	public virtual void ExitArraydeclaration([NotNull] MiniJavaGramParser.ArraydeclarationContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="MiniJavaGramParser.varible"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -216,6 +202,7 @@ public partial class MiniJavaGramBaseListener : IMiniJavaGramListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitStringArgs([NotNull] MiniJavaGramParser.StringArgsContext context) { }
+
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>
 	public virtual void EnterEveryRule([NotNull] ParserRuleContext context) { }
